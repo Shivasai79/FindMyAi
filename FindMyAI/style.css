@@ -1,0 +1,127 @@
+body {
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(180deg,#12092b,#1c1830);
+  color:#eaeaff;
+}
+
+/* --- Layout Grid (Mobile First) --- */
+.container {
+  display: grid;
+  grid-template-columns: 1fr; /* Default to one column (stacked) for mobile */
+  gap: 24px;
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Media Query for Desktop/Tablet: THIS CREATES THE SIDE-BY-SIDE LAYOUT */
+@media (min-width: 768px) {
+  .container {
+    /* Define two columns: sidebar (300px) and main content (rest of space) */
+    grid-template-columns: 300px 1fr; 
+  }
+
+  #controls {
+      position: sticky; /* Keep the controls in place as the user scrolls */
+      top: 24px;
+  }
+}
+.card {
+  background: rgba(255,255,255,0.05);
+  padding:5px;
+  border-radius:16px;
+  width: 100%;  /* full width */
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.brand { text-align:center; margin-bottom:12px; }
+.logo {
+  width:64px;
+  height:64px;
+  background:linear-gradient(135deg,#ff4da6,#7afcff);
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  color:#12092b;
+  font-family: monospace;
+  margin:0 auto 6px;
+}
+
+textarea, select {
+  width:100%;
+  margin-bottom:12px;
+  border-radius:12px;
+  padding:1.2px;
+  background:rgba(255,255,255,0.05);
+  color:#eaeaff;
+  border:1px dashed rgba(255,255,255,0.06);
+}
+
+#tags { margin:6px 0; display:flex; flex-wrap:wrap; gap:6px; }
+
+.tag {
+  display:inline-block; padding:6px 10px; border-radius:999px;
+  border:1px solid rgba(255,255,255,0.04);
+  font-size:12px; cursor:pointer;
+  background:rgba(255,255,255,0.02);
+  transition: all 0.2s;
+}
+
+.tag.active {
+  background:#7afcff;
+  color:#12092b;
+  font-weight:700;
+  border:none;
+}
+
+.tool {
+  background:rgba(255,255,255,0.08);
+  padding:12px;
+  margin-bottom:12px;
+  border-radius:12px;
+  transition: all 0.2s;
+}
+
+.tool-actions {
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  margin-top:8px;
+}
+
+.tool-actions a {
+  text-decoration:none;
+  color: #7afcff;
+  font-weight: bold;
+}
+
+.tool-actions button.favorite-btn {
+  font-size:16px;
+  cursor:pointer;
+  border:none;
+  background:none;
+  color:#ff4da6;
+}
+
+.tool-actions button.favorite-btn.favorited {
+  color:#7afcff;
+  font-weight:bold;
+}
+
+.favorite-tool {
+  background: rgba(255,255,255,0.1);
+  padding:8px;
+  margin-bottom:8px;
+  border-radius:10px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.favorite-tool a { text-decoration:none; color:inherit; }
+
+button { border:none; padding:8px 16px; border-radius:12px; font-weight:700; cursor:pointer; color:#12092b; background:#7afcff; }
+button:hover { transform:scale(1.05); }

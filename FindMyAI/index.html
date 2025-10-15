@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FindMyAi</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <!-- Controls -->
+  <aside class="card" id="controls">
+    <div class="brand">
+      <div class="logo">FMI</div>
+      <h2>FindMyAi</h2>
+    </div>
+
+    <textarea id="query" placeholder="Describe your task"></textarea>
+
+    <label>Price</label>
+    <select id="price">
+      <option value="any">Any</option>
+      <option value="freemium">Freemium</option>
+      <option value="paid">Paid</option>
+    </select>
+
+    <div id="tags"></div>
+
+    <div class="buttons">
+      <button id="reset">Clear Filters</button>
+      <button id="goto-favorites" onclick="location.href='favorites.html'">Favorites ⭐</button>
+    </div>
+  </aside>
+
+  <!-- Tools -->
+  <section class="card" id="results">
+    <h2>Top Matches</h2>
+    <div id="tools"></div>
+  </section>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
